@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import "modern-normalize/modern-normalize.css";
+import { GlobalStyle } from "../themes/GlobalStyle";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
