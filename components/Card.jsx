@@ -23,4 +23,7 @@ const Container = styled.div`
   height: max-content;
   padding: 24px;
   max-width: 800px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
