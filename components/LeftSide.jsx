@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { Input } from "@/components/index";
-import SelectTipButtons from "./SelectTipButtons";
+import { Input, SelectTipButtons } from "@/components/index";
+import { Dolar, Person } from "@/icons/index";
 
 const LeftSide = () => {
+  console.log(Dolar);
   return (
     <Container>
-      <Input label="Bill" placeholder="0" />
+      <Input label="Bill" placeholder="0" icon={<Dolar />} />
       <SelectTipButtons />
-      <Input label="Number of People" placeholder="0" />
+      <Input label="Number of People" placeholder="0" icon={<Person />} />
     </Container>
   );
 };

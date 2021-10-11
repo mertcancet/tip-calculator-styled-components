@@ -9,8 +9,10 @@ const Input = ({ label, icon, error, ...props }) => {
         {label && <InfoLabel>{label}</InfoLabel>}
         {error && <ErrorLabel>{error}</ErrorLabel>}
       </LabelWrapper>
-      <Icon icon={icon} />
-      <StyledInput type="number" error={error} {...props} />
+      <InputWrapper>
+        {icon && <Icon> {icon}</Icon>}
+        <StyledInput type="number" error={error} {...props} />
+      </InputWrapper>
     </Container>
   );
 };
@@ -18,7 +20,9 @@ const Input = ({ label, icon, error, ...props }) => {
 export default Input;
 
 const Container = styled.div``;
-
+const InputWrapper = styled.div`
+  position: relative;
+`;
 const LabelWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -36,7 +40,12 @@ const ErrorLabel = styled.span`
   color: ${colors.error};
 `;
 
-const Icon = styled.span``;
+const Icon = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+`;
 
 const StyledInput = styled.input`
   background-color: ${colors.cyan.lightGray[100]};
